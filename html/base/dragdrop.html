@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/icon.css">
+        <script type="text/javascript" src="../../lib/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/jquery.easyui.min.js"></script>
+        
+    </head>
+
+
+    <body>
+        <div id="drag" class="easyui-draggable" data-options="handle:'#title'" style="width:100px;height:100px;">
+            <div id="title" style="background:#ccc;">title</div>
+        </div>
+
+        <div id="drop" class="easyui-droppable" data-options="accept:'#title,#drag', onDragEnter:onDragEnter,disabled:0" style="width:100px;height:100px;background: red;"></div>
+    
+    
+    
+        <script>
+            function onDragEnter(e) {
+                console.log('...onDragEnter', e)
+            }
+        </script>
+    </body>
+</html>

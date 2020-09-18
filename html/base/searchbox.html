@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/icon.css">
+        <script type="text/javascript" src="../../lib/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/jquery.easyui.min.js"></script>
+        
+    </head>
+
+
+    <body>
+        <script type="text/javascript">
+            function qq(value, name) {
+                alert(value + ":" + name)
+            }
+        </script>
+         
+        <input id="ss" class="easyui-searchbox" style="width:300px" data-options="searcher:qq,prompt:'Please Input Value',menu:'#mm'">
+         
+        <div id="mm" style="width:120px">
+            <div data-options="name:'all',iconCls:'icon-ok'">All News</div>
+            <div data-options="name:'sports'">Sports News</div>
+        </div>
+    </body>
+</html>
