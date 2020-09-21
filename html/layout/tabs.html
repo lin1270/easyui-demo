@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/icon.css">
+        <script type="text/javascript" src="../../lib/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/jquery.easyui.min.js"></script>
+        
+    </head>
+
+
+    <body>
+        <div id="tt" class="easyui-tabs" style="width:500px;height:250px;">
+            <div title="Tab1" style="padding:20px;display:none;">
+                tab1
+            </div>
+            <div title="Tab2" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
+                tab2
+            </div>
+            <div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="padding:20px;display:none;">
+                tab3
+            </div>
+        </div>
+        <div>
+            <button id="add">添加</button>
+        </div>
+
+        <script>
+            function onAdd() {
+                console.log('...onadd')
+                // add a new tab panel
+                $('#tt').tabs('add',{
+                    title:'New Tab',
+                    content:'<h1>hehe</h1><h2>h2</h2>',
+                    closable:true,
+                });
+            }
+
+            $('#add').bind('click', onAdd);
+        </script>
+    </body>
+</html>

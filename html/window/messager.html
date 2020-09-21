@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/icon.css">
+        <script type="text/javascript" src="../../lib/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/jquery.easyui.min.js"></script>
+        
+    </head>
+
+
+    <body>
+        <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">alert1</a>
+        <a id="btn2" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">alert2</a>
+
+        <script>
+
+            $('#btn').bind('click', function(e){
+                $.messager.alert('警告','警告消息');
+            });
+
+            $('#btn2').bind('click', function(e){
+                $.messager.confirm('确认','您确认想要删除记录吗？',function(r){
+                    if (r){
+                        alert('确认删除');
+                    }
+                });
+            });
+
+            
+        </script>
+
+    </body>
+</html>

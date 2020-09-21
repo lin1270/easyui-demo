@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/icon.css">
+        <script type="text/javascript" src="../../lib/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/jquery.easyui.min.js"></script>
+        
+    </head>
+
+
+    <body>
+        <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">easyui</a>
+        <div id="mm" class="easyui-menu" style="width:120px;">
+            <div>New</div>
+            <div>
+                <span>Open</span>
+                <div style="width:150px;">
+                    <div><b>Word</b></div>
+                    <div>Excel</div>
+                    <div>PowerPoint</div>
+                </div>
+            </div>
+            <div data-options="iconCls:'icon-save'">Save</div>
+            <div class="menu-sep"></div>
+            <div>Exit</div>
+        </div>
+
+
+        <script>
+            $('#mm').menu({
+                onClick:function(item){
+                    //...
+                    console.log('...item', item)
+                }
+            });
+
+            $('#btn').bind('click', function(e){
+                console.log('..e', e)
+                $('#mm').menu('show', {
+                    left: e.currentTarget.clientLeft + 10,
+                    top: e.currentTarget.clientTop + 10 + e.currentTarget.clientHeight
+                });
+            });
+
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/icon.css">
+        <script type="text/javascript" src="../../lib/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/jquery.easyui.min.js"></script>
+        
+    </head>
+
+
+    <body>
+        <input id="switch1" class="easyui-switchbutton" checked="">
+        <input id="switch2" class="easyui-switchbutton" style="width:80px" data-options="onText:'已開啟',offText:'已關閉', onChange:onChange">
+    
+        <script>
+            function onChange(isOpen) {
+                console.log('..ee', isOpen)
+            }
+        </script>
+    </body>
+</html>

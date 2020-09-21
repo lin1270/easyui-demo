@@ -13,64 +13,60 @@
     <body>
         <div id="sm" class="easyui-sidemenu" data-options="data:data, onSelect:onSel"></div>
         <script>
-            var data = [{
-                text: 'Base',
-                iconCls: 'icon-sum',
-                children: [
-                    {
-                        text: 'draggable/droppable',
-                        url: './base/dragdrop.html'
-                    },
-                    {
-                        text: 'resize',
-                        url: './base/resize.html'
-                    }, 
-                    {
-                        text: 'pagination',
-                        url: './base/pagination.html'
-                    },
-                    {
-                        text: 'searchbox',
-                        url: './base/searchbox.html'
-                    },
-                    {
-                        text: 'progressbar',
-                        url: './base/progressbar.html'
-                    },
-                    {
-                        text: 'tooltip',
-                        url: './base/tooltip.html'
-                    },
-                ]
-            },{
-                text: 'Layout',
-                iconCls: 'icon-more',
-                state: 'open',
-                children: [
-                    {
-                        text: 'panel',
-                        url: './layout/panel.html'
-                    },
-                    {
-                        text: 'tabs',
-                        url: './layout/tabs.html'
-                    },
-                    {
-                        text: 'accordion',
-                        url: './layout/accordion.html'
-                    },
-                    {
-                        text: 'layout',
-                        url: './layout/layout.html'
-                    },
-                ]
-            }];
+            var data = [
+                {
+                    text: 'Base',
+                    iconCls: 'icon-sum',
+                    children: [
+                        { text: 'draggable/droppable', url: './base/dragdrop.html' },
+                        { text: 'resize', url: './base/resize.html' }, 
+                        { text: 'pagination', url: './base/pagination.html' },
+                        { text: 'searchbox', url: './base/searchbox.html' },
+                        { text: 'progressbar', url: './base/progressbar.html' },
+                        { text: 'tooltip', url: './base/tooltip.html' },
+                    ]
+                },
+                {
+                    text: 'Layout',
+                    iconCls: 'icon-more',
+                    children: [
+                        { text: 'panel', url: './layout/panel.html' },
+                        { text: 'tabs', url: './layout/tabs.html' },
+                        { text: 'accordion', url: './layout/accordion.html' },
+                        { text: 'layout', url: './layout/layout.html' },
+                    ]
+                },
+                {
+                    text: 'menu-button',
+                    iconCls: 'icon-more',
+                    children: [
+                        { text: 'menu', url: './menu-button/menu.html' },
+                        { text: 'sidemenu', url: './menu-button/sidemenu.html' },
+                        { text: 'linkbutton', url: './menu-button/linkbutton.html' },
+                        { text: 'menubutton', url: './menu-button/menubutton.html' },
+                        { text: 'splitbutton', url: './menu-button/splitbutton.html' },
+                        { text: 'switchbutton', url: './menu-button/switchbutton.html' },
+                    ]
+                },
+                {
+                    text: 'window',
+                    iconCls: 'icon-more',
+                    state: 'open',
+                    children: [
+                        { text: 'window', url: './window/window.html' },
+                        { text: 'dialog', url: './window/dialog.html' },
+                        { text: 'messager', url: './window/messager.html' },
+                    ]
+                },
+            
+            
+            ];
 
             function onSel(e){
-                window.parent.postMessage(e.url, '*')
+                window.parent.postMessage(JSON.stringify({url:e.url, title:e.text}), '*')
             };
 
-            onSel(data[1].children[0])
+            onSel(data[3].children[0])
         </script>
     </body>
 </html>

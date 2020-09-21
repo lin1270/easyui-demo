@@ -18,25 +18,41 @@
     </head>
 
     <body class="easyui-layout">
-        <div data-options="region:'west',split:true,title:'West'" style="width:240px;">
+        <div data-options="region:'west',split:true" style="width:240px;">
             <iframe src="./menu.html"></iframe>
         </div>
-        <div id="center" data-options="region:'center',title:'Center'">
-
+        <div id="center" data-options="region:'center'">
+            <div id="tt" class="easyui-tabs" data-options="fit:true" style="height: 100%;">
+            </div>
         </div>
 
 
         <script>
+
             window.addEventListener("message", receiveMessage, false);
             function receiveMessage(event) {
-                var oldIframe = $("#demoIframe")
-                if (oldIframe) oldIframe.remove()
+                if (event.data) {
+                    try {
+                        var data = JSON.parse(event.data)
 
-                // event.data
-                var iframeObj = document.createElement('iframe')
-                iframeObj.src = event.data
-                iframeObj.id = 'demoIframe'
-                $("#center").append(iframeObj)
+                        var theId = data.url.replace(/[\.\\\/]*/gi, '')
+                        var oldObj = $('#' + theId)
+                        if (oldObj && oldObj.length) {
+                            $('#tt').tabs('select', data.title)
+                            return
+                        }
+
+                        $('#tt').tabs('add',{
+                            id: theId,
+                            title: data.title,
+                            content: '<iframe src="' + data.url + '"></iframe>',
+                            closable:true,
+                        });
+                    } catch(e) {
+                        console.log('...ee', e)
+                    }
+                }
+                
             }
         </script>
     </body>

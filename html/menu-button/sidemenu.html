@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="../../lib/themes/icon.css">
+        <script type="text/javascript" src="../../lib/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/jquery.easyui.min.js"></script>
+        
+    </head>
+
+
+    <body>
+        <div id="sm" class="easyui-sidemenu" data-options="data:data, onSelect:onSel"></div>
+
+
+        <script>
+            var data = [
+                {
+                    text: 'Base',
+                    iconCls: 'icon-sum',
+                    children: [
+                        { text: 'draggable/droppable', url: './base/dragdrop.html' },
+                        { text: 'resize', url: './base/resize.html' }, 
+                        { text: 'pagination', url: './base/pagination.html' },
+                        { text: 'searchbox', url: './base/searchbox.html' },
+                        { text: 'progressbar', url: './base/progressbar.html' },
+                        { text: 'tooltip', url: './base/tooltip.html' },
+                    ]
+                },
+                {
+                    text: 'Layout',
+                    iconCls: 'icon-more',
+                    children: [
+                        { text: 'panel', url: './layout/panel.html' },
+                        { text: 'tabs', url: './layout/tabs.html' },
+                        { text: 'accordion', url: './layout/accordion.html' },
+                        { text: 'layout', url: './layout/layout.html' },
+                    ]
+                },
+            ]
+
+            function onSel(e){
+                console.log('....e', e)
+            };
+            
+        </script>
+    </body>
+</html>
